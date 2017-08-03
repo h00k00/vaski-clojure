@@ -14,7 +14,6 @@
             {:response-format (a/json-response-format)
             :error-handler error-handler
             :handler    (fn [response]
-                          (js/console.log response)
                           (reset! page-content response)
                           (re/dispatch [:set-active-panel panel]))}))
 

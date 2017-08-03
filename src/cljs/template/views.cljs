@@ -83,29 +83,14 @@
              :open              (if @drawer-open true false)
              :on-request-change #(re/dispatch [:close-drawer])}
             [ui/menu-item {:primary-text "Home"
-                           :href "#/"
-                           :on-touch-tap
-                            (fn []
-                              (println "Menu Item 1 Clicked"))}]
+                           :href "#/"}]
             [ui/menu-item {:primary-text "E-kirjat"
-                           :href "#/ekirjat"
-                           :on-touch-tap
-                            (fn []
-                              (println "Menu Item 2 Clicked"))}]
+                           :href "#/ekirjat"}]
             [ui/menu-item {:primary-text "Sarjakuvat"
-                           :href "#/sarjakuvat"
-                           :on-touch-tap
-                            (fn []
-                              (println "Menu Item 3 Clicked"))}]
+                           :href "#/sarjakuvat"}]
             [ui/menu-item {:primary-text "Jännitys"
-                           :href "#/jannitys"
-                           :on-touch-tap
-                            (fn []
-                              (println "Menu Item 4 Clicked"))}]
+                           :href "#/jannitys"}]
             [ui/menu-item {:primary-text "Spefi"
-                           :href "#/spefi"
-                           :on-touch-tap
-                            (fn []
-                              (println "Menu Item 5 Clicked"))}]]
+                           :href "#/spefi"}]]
           [ui/paper
             (panels @active-panel)]]])))
