@@ -1,12 +1,12 @@
-(ns template.core
+(ns vaski.core
   (:require [reagent.core :as reagent]
             [re-frame.core :as re]
-            [template.events]
-            [template.subs]
-            [template.views :as views]
-            [template.config :as config]
-            [template.handlers :as handlers]
-            [template.routes :as routes]))
+            [vaski.events]
+            [vaski.subs]
+            [vaski.views :as views]
+            [vaski.config :as config]
+            [vaski.handlers :as handlers]
+            [vaski.routes :as routes]))
 
 (defn splashscreen []
   (.-splashscreen js/navigator))

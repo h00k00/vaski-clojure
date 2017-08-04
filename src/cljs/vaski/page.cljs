@@ -1,4 +1,4 @@
-(ns template.page
+(ns vaski.page
   (:require
     [ajax.core :as a]
     [ajax.edn :as edn]

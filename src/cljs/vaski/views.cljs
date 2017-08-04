@@ -1,4 +1,4 @@
-(ns template.views
+(ns vaski.views
   (:require
     [cljsjs.material-ui]
     [cljs-react-material-ui.core :refer [get-mui-theme color]]
@@ -7,7 +7,7 @@
     [secretary.core :as secretary]
     [re-frame.core :as re]
     [reagent.core :as r]
-    [template.page :as page]))
+    [vaski.page :as page]))
 
 (defn records-panel [title]
   (let [records (page/page-item "records")]

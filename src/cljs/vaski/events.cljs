@@ -1,6 +1,6 @@
-(ns template.events
+(ns vaski.events
   (:require [re-frame.core :as re]
-            [template.db :as db]))
+            [vaski.db :as db]))
 
 (re/reg-event-db
  :initialize-db

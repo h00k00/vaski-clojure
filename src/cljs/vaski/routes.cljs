@@ -1,11 +1,11 @@
-(ns template.routes
+(ns vaski.routes
   (:import goog.History)
   (:require [secretary.core :as secretary :refer-macros [defroute]]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [re-frame.core :as re]
-            [template.db :as db]
-            [template.page :as page]))
+            [vaski.db :as db]
+            [vaski.page :as page]))
 
   (def navigation-state
     (atom [{:name "Home" :path "/"}

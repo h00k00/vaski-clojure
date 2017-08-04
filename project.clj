@@ -1,4 +1,4 @@
-(defproject template "0.1.0-SNAPSHOT"
+(defproject vaski "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [cljs-react-material-ui "0.2.46"]
@@ -28,8 +28,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "template.core/mount-root"}
-     :compiler     {:main                 template.core
+     :figwheel     {:on-jsload "vaski.core/mount-root"}
+     :compiler     {:main                 vaski.core
                     :output-to            "resources/www/js/app.js"
                     :output-dir           "resources/www/js/out"
                     :asset-path           "js/out"
@@ -40,7 +40,7 @@
 
     {:id           "min"
      :source-paths ["src/cljs"]
-     :compiler     {:main            template.core
+     :compiler     {:main            vaski.core
                     :output-to       "resources/www/js/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}

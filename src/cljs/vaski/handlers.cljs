@@ -1,4 +1,4 @@
-(ns template.handlers
+(ns vaski.handlers
   (:require [re-frame.core :as re]))
 
 (defn drawer-state [state {:keys [db]} _]

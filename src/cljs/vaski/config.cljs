@@ -1,4 +1,4 @@
-(ns template.config)
+(ns vaski.config)
 
 (def debug?
   ^boolean goog.DEBUG)
