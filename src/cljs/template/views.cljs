@@ -13,8 +13,8 @@
   (let [records (page/page-item "records")]
   (fn []
     [:div {:style {:padding-top "80px"
-                   :margin-left "20px"
-                   :margin-right "20px"}}
+                   :margin "0 auto"
+                   :max-width "800px"}}
     [:h1.title title]
     (for [[record id] (map-indexed (fn [i r] [r (str "record-" i)]) records)]
       [ui/paper {:key id
@@ -23,14 +23,13 @@
           [:img.cover {:src (str "https://api.finna.fi" (get-in record ["images" 0]))}]
           [:h3.author
             [:p (get-in (get record "nonPresenterAuthors") [0 "name"])]]
-            ; [:a {:href (get-in record ["onlineUrls" 0 "url"]) :target "_blank"}
           [:a.title {:href (str "https://vaski.finna.fi/Record/" (get record "id")) :target "_blank"}
-            [:h2 (get record "title")]]
-      ]])
-      ])))
+            [:h2 (get record "title")]]]])])))
 
 (defn empty-panel []
-  [:div {:style {:padding-top "80px"
+  [:div {:style {:height "100vh"
+                 :padding-top "200px"
+                 :padding-bottom "200px"
                  :margin-left "20px"
                  :margin-right "20px"}}
     [:h1 "Haetaan tietoja ..."]])
@@ -69,11 +68,8 @@
         {:mui-theme (get-mui-theme
           {:palette {:text-color "#7A7478"}})}
         [:div
-          [ui/app-bar { :title "Title"
+          [ui/app-bar { :title "Vaski uutuudet"
                         :style {:position "fixed" :text-transform "uppercase"}
-                        :icon-element-right
-                          (r/as-element [ui/icon-button
-                            (ic/action-account-balance-wallet)])
                         :on-left-icon-button-touch-tap
                           #(re/dispatch [:open-drawer])}]
           [ui/drawer {:docked            false
