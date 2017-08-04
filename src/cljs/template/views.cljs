@@ -22,12 +22,10 @@
         [:div.container
           [:img.cover {:src (str "https://api.finna.fi" (get-in record ["images" 0]))}]
           [:h3.author
-            (for [[author id] (map-indexed (fn [i a] [a (str "record-" i)]) (get record "nonPresenterAuthors"))]
-              [:span {:key id} (str (get author "name") "  ")]
-            )]
+            [:p (get-in (get record "nonPresenterAuthors") [0 "name"])]]
             ; [:a {:href (get-in record ["onlineUrls" 0 "url"]) :target "_blank"}
-            [:a.title {:href (str "https://vaski.finna.fi/Record/" (get record "id")) :target "_blank"}
-              [:h2 (get record "title")]]
+          [:a.title {:href (str "https://vaski.finna.fi/Record/" (get record "id")) :target "_blank"}
+            [:h2 (get record "title")]]
       ]])
       ])))
 
@@ -78,10 +76,10 @@
                             (ic/action-account-balance-wallet)])
                         :on-left-icon-button-touch-tap
                           #(re/dispatch [:open-drawer])}]
-          [ui/drawer
-            {:docked            false
-             :open              (if @drawer-open true false)
-             :on-request-change #(re/dispatch [:close-drawer])}
+          [ui/drawer {:docked            false
+                      :style {:text-transform "uppercase"}
+                      :open              (if @drawer-open true false)
+                      :on-request-change #(re/dispatch [:close-drawer])}
             [ui/menu-item {:primary-text "Home"
                            :href "#/"}]
             [ui/menu-item {:primary-text "E-kirjat"

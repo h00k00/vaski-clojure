@@ -32,7 +32,7 @@
       (re/dispatch [:close-drawer])
       (re/dispatch [:set-active-panel :empty-panel])
       (page/load-content
-        (str baseUrl turku suomi "&filter[]=first_indexed:[NOW-2WEEKS+TO+NOW]&filter[]=~format:1/Book/Book/&filter[]=~major_genre_str_mv:fiction")
+        (str baseUrl turku suomi "&filter[]=first_indexed:[NOW-14DAYS+TO+NOW]&filter[]=~format:1/Book/Book/&filter[]=~major_genre_str_mv:fiction")
         :home-panel))
 
     (defroute records "/records" []
